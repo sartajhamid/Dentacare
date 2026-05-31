@@ -1,26 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-teal-50:  #f0fafa;
+  --color-teal-100: #ccefef;
+  --color-teal-200: #99dfdf;
+  --color-teal-300: #5ec9c9;
+  --color-teal-400: #2eb8b8;
+  --color-teal-500: #0B9E9E;
+  --color-teal-600: #0B6E6E;
+  --color-teal-700: #095858;
+  --color-teal-800: #074444;
+  --color-teal-900: #042e2e;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-mint-50:  #f2fdf9;
+  --color-mint-100: #d4f7ec;
+  --color-mint-200: #a8eed9;
+  --color-mint-300: #6de0c0;
+  --color-mint-400: #34cba4;
+  --color-mint-500: #17b08a;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-cream:    #F8F6F1;
+  --color-charcoal: #1a1a2e;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  --animate-fade-up:    fadeUp 0.6s ease forwards;
+  --animate-fade-in:    fadeIn 0.5s ease forwards;
+  --animate-float:      float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4,0,0.6,1) infinite;
+
+  @keyframes fadeUp {
+    0%   { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-12px); }
   }
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: #ffffff;
+  color: #1a1a2e;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track  { background: #f0fafa; }
+::-webkit-scrollbar-thumb  { background: #0B6E6E; border-radius: 3px; }
+
+::selection { background: #99dfdf; color: #042e2e; }
+
+.text-gradient {
+  background: linear-gradient(135deg, #0B9E9E, #34cba4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
