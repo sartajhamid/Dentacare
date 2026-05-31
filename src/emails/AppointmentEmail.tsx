@@ -104,20 +104,30 @@ export default function AppointmentEmail({
           )}
 
           {/* CTA */}
-          <Section style={ctaSection}>
-            <Text style={ctaText}>Reply to this email to confirm the appointment</Text>
-            <Text style={ctaSubText}>
-              Or call the patient directly at <strong>{phone}</strong>
-            </Text>
+          <Section style={{ margin:"16px 40px 0" }}>
+            <Row>
+              <Column style={{ paddingRight: 8 }}>
+                <a href={`mailto:${email}?subject=Your Appointment Confirmation — DentaCare Pro&body=Hi ${name},%0D%0A%0D%0AThank you for requesting an appointment at DentaCare Pro!%0D%0A%0D%0AWe're happy to confirm your appointment for ${service} on ${date}${time ? ` at ${time}` : ""}.%0D%0A%0D%0APlease reply to this email or call us at (512) 555-0100 if you need to make any changes.%0D%0A%0D%0AWe look forward to seeing you!%0D%0A%0D%0ABest regards,%0D%0ADentaCare Pro Team`}
+                  style={{ display:"block", background:"#0B6E6E", color:"#fff", textAlign:"center" as const, padding:"14px 20px", borderRadius:12, textDecoration:"none", fontWeight:700, fontSize:14, fontFamily:"'DM Sans',sans-serif" }}>
+                  ✉️ Reply to Confirm
+                </a>
+              </Column>
+              <Column style={{ paddingLeft: 8 }}>
+                <a href={`tel:${phone}`}
+                  style={{ display:"block", background:"#f0fafa", color:"#0B6E6E", textAlign:"center" as const, padding:"14px 20px", borderRadius:12, textDecoration:"none", fontWeight:700, fontSize:14, fontFamily:"'DM Sans',sans-serif", border:"2px solid #0B6E6E" }}>
+                  📞 Call Patient
+                </a>
+              </Column>
+            </Row>
           </Section>
 
-          {/* Footer */}
-          <Section style={footer}>
-            <Text style={footerText}>
-              DentaCare Pro • 123 Dental Ave, Austin, TX 78701
+          {/* CTA note */}
+          <Section style={{ margin:"12px 40px 0", backgroundColor:"#042e2e", borderRadius:14, padding:"20px 28px", textAlign:"center" as const }}>
+            <Text style={{ fontSize:13, fontWeight:600, color:"#ffffff", margin:"0 0 6px" }}>
+              ⚡ Respond within 2 hours for best patient experience
             </Text>
-            <Text style={footerText}>
-              This email was sent from your website booking form.
+            <Text style={{ fontSize:12, color:"rgba(255,255,255,0.55)", margin:0 }}>
+              Replying to this email goes directly to <strong style={{ color:"#6de0c0" }}>{email}</strong>
             </Text>
           </Section>
 
