@@ -107,7 +107,7 @@ export default function AppointmentEmail({
           <Section style={{ margin:"16px 40px 0" }}>
             <Row>
               <Column style={{ paddingRight: 8 }}>
-                <a href={`mailto:${email}?subject=Your Appointment Confirmation — DentaCare Pro&body=Hi ${name},%0D%0A%0D%0AThank you for requesting an appointment at DentaCare Pro!%0D%0A%0D%0AWe're happy to confirm your appointment for ${service} on ${date}${time ? ` at ${time}` : ""}.%0D%0A%0D%0APlease reply to this email or call us at (512) 555-0100 if you need to make any changes.%0D%0A%0D%0AWe look forward to seeing you!%0D%0A%0D%0ABest regards,%0D%0ADentaCare Pro Team`}
+                <a href={`mailto:${email}?subject=Your%20Appointment%20Confirmation%20%E2%80%94%20DentaCare%20Pro&body=Hi%20${encodeURIComponent(name)}%2C%0D%0A%0D%0AThank%20you%20for%20requesting%20an%20appointment%20at%20DentaCare%20Pro!%0D%0A%0D%0AWe%27re%20happy%20to%20confirm%20your%20appointment%20for%20${encodeURIComponent(service)}%20on%20${encodeURIComponent(date)}${time ? `%20at%20${encodeURIComponent(time)}` : ""}%2E%0D%0A%0D%0APlease%20reply%20to%20this%20email%20or%20call%20us%20at%20(512)%20555-0100%20if%20you%20need%20to%20make%20any%20changes%2E%0D%0A%0D%0AWe%20look%20forward%20to%20seeing%20you!%0D%0A%0D%0ABest%20regards%2C%0D%0ADentaCare%20Pro%20Team`}
                   style={{ display:"block", background:"#0B6E6E", color:"#fff", textAlign:"center" as const, padding:"14px 20px", borderRadius:12, textDecoration:"none", fontWeight:700, fontSize:14, fontFamily:"'DM Sans',sans-serif" }}>
                   ✉️ Reply to Confirm
                 </a>
